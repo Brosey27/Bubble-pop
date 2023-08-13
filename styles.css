@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #1a1a2e;
   }
   
   .game-container {
@@ -38,5 +38,20 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
+  }
+  .popped {
+    animation: popAnimation 0.3s ease forwards;
+  }
+  
+  /* Define the animation keyframes */
+  @keyframes popAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
   }
   

@@ -1,9 +1,14 @@
 const gameContainer = document.querySelector('.game-container');
 let score = 0;
+let timeLeft = 30;
+let isGameRunning = false;
 
 function createBubble() {
   const bubble = document.createElement('div');
   bubble.classList.add('bubble');
+
+  
+
   
   // Set random position within the game container
   const x = Math.random() * (gameContainer.clientWidth - 50);
@@ -20,26 +25,23 @@ function createBubble() {
 }
 
 function popBubble(bubble) {
-  bubble.removeEventListener('click', () => {
-    popBubble(bubble);
-  });
-  bubble.style.backgroundColor = '#ff6347'; // Change color when popped
-  bubble.style.transform = 'scale(0.5)'; // Shrink the bubble
-  score++;
-  updateScore();
-  setTimeout(() => {
-    gameContainer.removeChild(bubble);
-  }, 300); // Remove the bubble after a short delay
-}
+    bubble.removeEventListener('click', () => {
+      popBubble(bubble);
+    });
+    bubble.classList.add('popped'); // Apply the "popped" class
+    score++;
+    updateScore();
+    setTimeout(() => {
+      gameContainer.removeChild(bubble);
+    }, 300); // Remove the bubble after a short delay
+  }
 
 function updateScore() {
   const scoreDisplay = document.querySelector('.score');
   scoreDisplay.textContent = `Score: ${score}`;
 }
 
-function updateScore() {
-    const scoreDisplay = document.querySelector('.score');
-    scoreDisplay.textContent = `Score: ${score}`;
-  }
+
+
 
 setInterval(createBubble, 1000); // Create a new bubble every second
