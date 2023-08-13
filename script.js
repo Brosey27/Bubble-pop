@@ -37,4 +37,9 @@ function updateScore() {
   scoreDisplay.textContent = `Score: ${score}`;
 }
 
+function updateScore() {
+    const scoreDisplay = document.querySelector('.score');
+    scoreDisplay.textContent = `Score: ${score}`;
+  }
+
 setInterval(createBubble, 1000); // Create a new bubble every second
