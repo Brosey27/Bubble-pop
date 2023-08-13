@@ -42,6 +42,9 @@ function popBubble(bubble) {
         gameContainer.removeChild(bubble);
       }, 300); // Remove the bubble after a short delay
     }
+    const popSound = document.getElementById('popSound');
+  popSound.currentTime = 0; // Reset the audio to the beginning
+  popSound.play();
   }
   
   function gameOver() {
