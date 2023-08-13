@@ -30,6 +30,7 @@ function createBubble() {
 
 function popBubble(bubble) {
     if (bubble.classList.contains('red-bubble')) {
+        playRedPopSound(); // Play red bubble pop sound
       gameOver();
     } else {
       bubble.removeEventListener('click', () => {
@@ -45,6 +46,12 @@ function popBubble(bubble) {
     const popSound = document.getElementById('popSound');
   popSound.currentTime = 0; // Reset the audio to the beginning
   popSound.play();
+  }
+
+  function playRedPopSound() {
+    const redPopSound = document.getElementById('redPopSound');
+    redPopSound.currentTime = 0; // Reset the audio to the beginning
+    redPopSound.play();
   }
   
   function gameOver() {
