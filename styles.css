@@ -16,17 +16,39 @@ body {
     border: 2px solid #000000;
     border-radius: 5px;
     overflow: hidden;
+    background-image: url('./Images/time-lapse-clouds-travel-across-a-blue-sky-free-video.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+    
   }
   
   .bubble {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: #3498db;
     border-radius: 50%;
     cursor: pointer;
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    background: radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: floatBubble 4s ease-in-out infinite alternate;
   }
+  
+  /* Keyframes animation for floating effect */
+  @keyframes floatBubble {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  
   h1 {
     position: fixed;
     top: 0;
