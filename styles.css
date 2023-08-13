@@ -111,3 +111,19 @@ body {
     color: #fff;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
+  .score {
+    /* Default style */
+    color: black;
+  }
+  
+  .high-score {
+    color: green; /* Change to desired color */
+  }
+  
+  .medium-score {
+    color: orange; /* Change to desired color */
+  }
+  
+  .low-score {
+    color: red; /* Change to desired color */
+  }

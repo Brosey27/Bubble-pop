@@ -60,10 +60,23 @@ function popBubble(bubble) {
     resetGame();
   }
 
-function updateScore() {
-  const scoreDisplay = document.querySelector('.score');
-  scoreDisplay.textContent = `Score: ${score}`;
-}
+  function updateScore() {
+    const scoreDisplay = document.querySelector('.score');
+  
+    if (score >= 50) {
+      scoreDisplay.textContent = `Score: ${score}`;
+      scoreDisplay.classList.add('high-score');
+      scoreDisplay.classList.remove('medium-score', 'low-score');
+    } else if (score >= 20) {
+      scoreDisplay.textContent = `Score: ${score}`;
+      scoreDisplay.classList.add('medium-score');
+      scoreDisplay.classList.remove('high-score', 'low-score');
+    } else {
+      scoreDisplay.textContent = `Score: ${score}`;
+      scoreDisplay.classList.add('low-score');
+      scoreDisplay.classList.remove('high-score', 'medium-score');
+    }
+  }
 
 function resetGame() {
     const bubbles = document.querySelectorAll('.bubble');
