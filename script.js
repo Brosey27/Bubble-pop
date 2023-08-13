@@ -7,7 +7,7 @@ function createBubble() {
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
   
-    if (Math.random() < 0.1) {
+    if (Math.random() < 0.3) {
       bubble.classList.add('red-bubble');
     }
 
